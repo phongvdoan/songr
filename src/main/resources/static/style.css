@@ -11,3 +11,18 @@ body {
 h1 {
     color: blue;
 }
+
+ul {
+    margin: 5% 5%;
+    list-style-type: none;
+    border: 1px solid black;
+}
+
+li {
+    background: lightgray;
+}
+
+img {
+    width: 50%;
+    height: 50%;
+}

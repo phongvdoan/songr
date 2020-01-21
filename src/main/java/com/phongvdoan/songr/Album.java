@@ -22,4 +22,13 @@ public class Album {
     public String getImageUrl(){
         return this.imageUrl;
     }
+
+    public int getSongCount(){
+        return this.songCount;
+    }
+
+    public int getLengthInSeconds(){
+        return this.lengthInSeconds;
+    }
+
 }

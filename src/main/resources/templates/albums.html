@@ -3,14 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>A List of Albums</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <h1>Album List: </h1>
 <ul>
     <li th:each="album : ${albums}" >
         <img th:src="${album.imageUrl}" alt="">
-        <p th:text="${album.artist}"></p>
-
+        <p>By: <span th:text="${album.artist}"></span></p>
+        <p>There are <span th:text="${album.songCount}"></span> songs in this album.</p>
+        <p>with a total of <span th:text="${album.lengthInSeconds}"> </span> seconds of total time of songs.</p>
     </li>
 </ul>
 </body>
