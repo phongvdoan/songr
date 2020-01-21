@@ -10,6 +10,8 @@ import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 class SongrApplicationTests {
 
+
+	//https://stackoverflow.com/questions/21354311/junit-test-of-setters-and-getters-of-instance-variables
 	Album testAlbum;
 
 	@Test
