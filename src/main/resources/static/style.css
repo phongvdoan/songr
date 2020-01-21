@@ -1,0 +1,28 @@
+* {
+    box-sizing: border-box;
+    width: 100%;
+}
+
+body {
+    background: darkgray;
+    text-align: center;
+}
+
+h1 {
+    color: blue;
+}
+
+ul {
+    margin: 5% 5%;
+    list-style-type: none;
+    border: 1px solid black;
+}
+
+li {
+    background: lightgray;
+}
+
+img {
+    width: 50%;
+    height: 50%;
+}
