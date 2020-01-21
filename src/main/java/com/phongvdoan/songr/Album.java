@@ -38,15 +38,19 @@ public class Album {
     public void setTitle(String title){
         this.title= title;
     }
+
     public void setArtist(String artist){
         this.artist= artist;
     }
+
     public void setSongCount(int songCount){
         this.songCount= songCount;
     }
+
     public void setLengthInSeconds(int lengthInSeconds){
         this.lengthInSeconds= lengthInSeconds;
     }
+
     public void setImageUrl(String imageUrl){
         this.imageUrl= imageUrl;
     }
