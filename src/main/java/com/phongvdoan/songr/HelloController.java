@@ -31,4 +31,5 @@ public class HelloController {
         m.addAttribute("albums", albumList);
         return "albums";
     }
+
 }
