@@ -9,6 +9,7 @@
         <h1>Album List: </h1>
         <div>
         <ul>
+<!--            https://stackoverflow.com/questions/24256051/delete-or-put-methods-in-thymeleaf-->
             <li th:each="album : ${albums}" >
                 <img th:src="${album.imageUrl}" alt="">
                 <p>By: <span th:text="${album.artist}"></span></p>

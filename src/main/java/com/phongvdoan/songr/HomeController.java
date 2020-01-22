@@ -53,7 +53,7 @@ public class HomeController {
         albumRepository.deleteById(id);
         return new RedirectView("/albums");
     }
-
+//https://www.callicoder.com/spring-boot-rest-api-tutorial-with-mysql-jpa-hibernate/
     @PutMapping("/albums")
     public RedirectView updateAlbums(Long id){
         Album album= albumRepository.getOne(id);
