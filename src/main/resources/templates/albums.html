@@ -19,6 +19,11 @@
                     <input type="hidden" name="id" th:value="${album.id}">
                     <button type="submit">DELETE</button>
                 </form>
+                <form th:action="@{'/albums'}" th:method="put">
+                    <input type="hidden" name="_method" value="put">
+                    <input type="hidden" name="id" th:value="${album.id}">
+                    <button type="submit">Update</button>
+                </form>
             </li>
         </ul>
         </div>
