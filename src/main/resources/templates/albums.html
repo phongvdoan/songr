@@ -15,13 +15,13 @@
                     <input type="hidden" name="_method" value="put">
                     <input type="hidden" name="id" th:value="${album.id}">
                     <img th:src="${album.imageUrl}" alt="">
-                    <input type="text" name="imageUrl"required>
+                    <input type="text" name="imageUrl" value="image URL" required>
                     <p>By: <span th:text="${album.artist}"></span></p>
-                    <input type="text" name="artist" required>
+                    <input type="text" name="artist" value="artist" required>
                     <p>There are <span th:text="${album.songCount}"></span> songs in this album.</p>
-                    <input type="number" name="songCount" required>
+                    <input type="number" name="songCount" value="0" required>
                     <p>with a total of <span th:text="${album.lengthInSeconds}"> </span> seconds of total time of songs.</p>
-                    <input type="number" name="lengthInSeconds" required>
+                    <input type="number" name="lengthInSeconds" value="0" required>
                     <button type="submit">Update</button>
                 </form>
                 <form id="deleteForm" th:action="@{'/albums'}" th:method="delete">

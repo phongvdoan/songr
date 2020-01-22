@@ -14,16 +14,19 @@ h1 {
 }
 
 ul {
-    margin: 5% 5%;
+    position:relative;
+    margin: 5% auto;
     list-style-type: none;
     border: 1px solid black;
+    height: fit-content;
 }
 
 li {
+    position: relative;
     float: left;
     background: lightgray;
     width: 15%;
-    margin: 10%;
+    margin :15px 20px;
 
 }
 
@@ -32,7 +35,7 @@ img {
     height: 50%;
 }
 div{
-
+    height: 100vh;
 }
 
 #addForm {
