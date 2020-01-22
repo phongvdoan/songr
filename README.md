@@ -18,9 +18,40 @@ Initialize the Spring app and create a controller class to control routes. Add t
 
 ## To Run
 
-Run the main method 
+Run ./gradlew run
+
 In browser, type localhost.com/8080
+
 type localhost.com/8080/hello
+
 type localhost.com/8080/capitalize/<insert words>
+
 type localhost.com/8080/albums
 
+
+# Spring and REST
+
+## Collaborators:  Phong
+
+### Problem Domain
+
+Update your Album model so that it can be saved in a database.
+An Album has a title, an artist, a songCount, a length (in seconds), and an imageUrl that is a link to that album’s art.
+A user should be able to see information about all the albums on the site.
+A user should be able to add albums to the site.
+
+### Solution
+
+Add dependencies, and added a AlbumRepository Interface.
+
+## To Run
+
+Run ./gradlew run
+
+In browser, type localhost.com/8080
+
+type localhost.com/8080/hello
+
+type localhost.com/8080/capitalize/<insert words>
+
+type localhost.com/8080/albums

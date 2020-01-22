@@ -6,6 +6,7 @@
 body {
     background: darkgray;
     text-align: center;
+    align-content: center;
 }
 
 h1 {
@@ -20,9 +21,16 @@ ul {
 
 li {
     background: lightgray;
+    width: 10%;
+    height: auto;
 }
 
 img {
     width: 50%;
     height: 50%;
+}
+
+form {
+    margin-top: 30px;
+    width: 20%;
 }

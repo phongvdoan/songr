@@ -1,19 +1,39 @@
 <!DOCTYPE html>
 <html lang="en"  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <title>A List of Albums</title>
-    <link rel="stylesheet" href="/style.css">
-</head>
-<body>
-<h1>Album List: </h1>
-<ul>
-    <li th:each="album : ${albums}" >
-        <img th:src="${album.imageUrl}" alt="">
-        <p>By: <span th:text="${album.artist}"></span></p>
-        <p>There are <span th:text="${album.songCount}"></span> songs in this album.</p>
-        <p>with a total of <span th:text="${album.lengthInSeconds}"> </span> seconds of total time of songs.</p>
-    </li>
-</ul>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>A List of Albums</title>
+        <link rel="stylesheet" href="/style.css">
+    </head>
+    <body>
+        <h1>Album List: </h1>
+        <div>
+        <ul>
+            <li th:each="album : ${albums}" >
+                <img th:src="${album.imageUrl}" alt="">
+                <p>By: <span th:text="${album.artist}"></span></p>
+                <p>There are <span th:text="${album.songCount}"></span> songs in this album.</p>
+                <p>with a total of <span th:text="${album.lengthInSeconds}"> </span> seconds of total time of songs.</p>
+            </li>
+        </ul>
+        </div>
+        <div>
+        <form method="POST" action="/albums">
+            <fieldset>
+                <legend>Add new album.</legend>
+                <h3>Title</h3>
+                <input type="text" name="title">
+                <h3>Artist</h3>
+                <input type="text" name="artist">
+                <h3>Song Count</h3>
+                <input type="number" name="songCount">
+                <h3>Length in Seconds</h3>
+                <input type="number" name="lengthInSeconds">
+                <h3>Image URL</h3>
+                <input type="text" name="imageUrl">
+                <button type="submit">Submit</button>
+            </fieldset>
+        </form>
+        </div>
+    </body>
 </html>

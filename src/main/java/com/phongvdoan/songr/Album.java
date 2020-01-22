@@ -1,18 +1,32 @@
 package com.phongvdoan.songr;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Album {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    long id;
     String title;
     String artist;
     int songCount;
-    int lengthInSeconds;
+    long lengthInSeconds;
     String imageUrl;
 
-    public Album(String title, String artist, int songCount, int lengthInSeconds, String imageUrl) {
+    public Album(String title, String artist, int songCount, long lengthInSeconds, String imageUrl) {
         this.title = title;
         this.artist = artist;
         this.songCount = songCount;
         this.lengthInSeconds = lengthInSeconds;
         this.imageUrl = imageUrl;
+    }
+
+    public Album(){
+
     }
 
     public String getTitle() {
@@ -31,7 +45,7 @@ public class Album {
         return this.songCount;
     }
 
-    public int getLengthInSeconds(){
+    public long getLengthInSeconds(){
         return this.lengthInSeconds;
     }
 
