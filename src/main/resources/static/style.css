@@ -20,17 +20,27 @@ ul {
 }
 
 li {
+    float: left;
     background: lightgray;
-    width: 10%;
-    height: auto;
+    width: 15%;
+    margin: 10%;
+
 }
 
 img {
     width: 50%;
     height: 50%;
 }
+div{
 
-form {
-    margin-top: 30px;
+}
+
+#addForm {
+    margin: 10% auto;
+
     width: 20%;
+}
+
+button {
+    width: fit-content;
 }

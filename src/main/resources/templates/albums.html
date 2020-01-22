@@ -12,10 +12,9 @@
             <li th:each="album : ${albums}" >
                 <img th:src="${album.imageUrl}" alt="">
                 <p>By: <span th:text="${album.artist}"></span></p>
-                <p>By: <span th:text="${album.id}"></span></p>
                 <p>There are <span th:text="${album.songCount}"></span> songs in this album.</p>
                 <p>with a total of <span th:text="${album.lengthInSeconds}"> </span> seconds of total time of songs.</p>
-                <form th:action="@{'/albums'}" th:method="delete">
+                <form id="deleteForm" th:action="@{'/albums'}" th:method="delete">
                     <input type="hidden" name="_method" value="delete">
                     <input type="hidden" name="id" th:value="${album.id}">
                     <button type="submit">DELETE</button>
@@ -24,7 +23,7 @@
         </ul>
         </div>
         <div>
-        <form method="POST" action="/albums">
+        <form id ="addForm" method="POST" action="/albums">
             <fieldset>
                 <legend>Add new album.</legend>
                 <h3>Title</h3>
