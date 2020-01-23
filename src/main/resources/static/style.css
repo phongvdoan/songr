@@ -18,7 +18,7 @@ ul {
     margin: 5% auto;
     list-style-type: none;
     border: 1px solid black;
-    height: fit-content;
+    height: 700px;
 }
 
 li {
@@ -27,6 +27,13 @@ li {
     background: lightgray;
     width: 15%;
     margin :15px 20px;
+}
+
+#detailLi {
+    position: relative;
+    background: lightgray;
+    width: 25%;
+    margin: 5% 35%;
 
 }
 
@@ -35,7 +42,7 @@ img {
     height: 50%;
 }
 div{
-    height: 100vh;
+    height: 700px;
 }
 
 #addForm {
