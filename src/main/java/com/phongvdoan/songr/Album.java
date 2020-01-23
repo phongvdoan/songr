@@ -14,7 +14,7 @@ public class Album {
     long id;
 
     @OneToMany(mappedBy = "album")
-    public List<Song> songs;
+    List<Song> songs;
 
     String title;
     String artist;
@@ -76,5 +76,13 @@ public class Album {
 
     public long getId() {
         return id;
+    }
+
+    public List<Song> getSongs() {
+        return songs;
+    }
+
+    public String toString(){
+        return String.format("%s by %s with %d songs.", this.title, this.artist, this.songCount);
     }
 }

@@ -59,7 +59,7 @@ public class HomeController {
     }
 //https://www.callicoder.com/spring-boot-rest-api-tutorial-with-mysql-jpa-hibernate/
     @PutMapping("/albums")
-    public RedirectView updateAlbums(long id, String title, String artist, Integer songCount, Integer lengthInSeconds, String imageUrl){
+    public RedirectView updateAlbums(Long id, String title, String artist, Integer songCount, Integer lengthInSeconds, String imageUrl){
         Album album= albumRepository.getOne(id);
         album.setArtist(artist);
         album.setImageUrl(imageUrl);
@@ -72,18 +72,17 @@ public class HomeController {
 
     @GetMapping("/album")
     public String getOneAlbum(long id, Model m) {
-        Album oneAlbum = albumRepository.getOne(id);
-        m.addAttribute("album", oneAlbum);
+        Album album = albumRepository.getOne(id);
+        m.addAttribute("album", album);
         return "album";
     }
 
-    @PostMapping("/album")
-    public RedirectView addSongToAlbum(Long id, String title, long length, int trackNumber) {
-//        System.out.println(id);
-//        Album oneAlbum = albumRepository.getOne(id);
-//        Song newSong = new Song(title, length, trackNumber);
-//        newSong.album = oneAlbum;
-//        songRepository.save(newSong);
+    @PostMapping("/song")
+    public RedirectView addSongToAlbum(long id, String title, long length, int trackNumber) {
+        Album oneAlbum = albumRepository.getOne(id);
+        Song newSong = new Song(title, length, trackNumber);
+        newSong.album = oneAlbum;
+        songRepository.save(newSong);
         return new RedirectView("/albums");
     }
 

@@ -27,7 +27,7 @@ public class Song {
     }
 
     public String toString(){
-        return String.format("Track Number: %d, Title: %s, Length: %d", this.trackNumber, this.title, this.length);
+        return String.format("Track Number: %d, Title: %s, Length: %d", trackNumber, title, length);
     }
 
 }
