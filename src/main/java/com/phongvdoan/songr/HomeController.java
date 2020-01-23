@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @Controller
@@ -14,6 +15,9 @@ public class HomeController {
 
     @Autowired
     AlbumRepository albumRepository;
+
+    @Autowired
+    SongRepository songRepository;
 
     @GetMapping("/")
     public String index(){
@@ -63,6 +67,23 @@ public class HomeController {
         album.setSongCount(songCount);
         album.setTitle(title);
         albumRepository.save(album);
+        return new RedirectView("/albums");
+    }
+
+    @GetMapping("/album")
+    public String getOneAlbum(long id, Model m) {
+        Album oneAlbum = albumRepository.getOne(id);
+        m.addAttribute("album", oneAlbum);
+        return "album";
+    }
+
+    @PostMapping("/album")
+    public RedirectView addSongToAlbum(Long id, String title, long length, int trackNumber) {
+//        System.out.println(id);
+//        Album oneAlbum = albumRepository.getOne(id);
+//        Song newSong = new Song(title, length, trackNumber);
+//        newSong.album = oneAlbum;
+//        songRepository.save(newSong);
         return new RedirectView("/albums");
     }
 
