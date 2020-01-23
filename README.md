@@ -46,6 +46,41 @@ Add dependencies, and added a AlbumRepository Interface.
 
 ## To Run
 
+psql
+
+Create Database albums
+
+Run ./gradlew run
+
+In browser, type localhost.com/8080
+
+type localhost.com/8080/hello
+
+type localhost.com/8080/capitalize/<insert words>
+
+type localhost.com/8080/albums
+
+# Related Resources and Integration Testing
+
+## Collaborators:  Phong
+
+### Problem Domain
+
+A user should be able to see information about all the songs on the site.
+A user should be able to view a page with data about one particular album.
+A user should be able to add songs to an album.
+A user should be able to see the songs that belong to an album when looking at that album.
+
+### Solution
+
+Added Song, SongRepository Class with a ManytoOne relationship to Album that has a oneToMany.
+
+## To Run
+
+psql
+
+Create Database albums
+
 Run ./gradlew run
 
 In browser, type localhost.com/8080

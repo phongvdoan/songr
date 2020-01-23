@@ -2,10 +2,8 @@ package com.phongvdoan.songr;
 
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
@@ -14,6 +12,10 @@ public class Album {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     long id;
+
+    @OneToMany(mappedBy = "album")
+    List<Song> songs;
+
     String title;
     String artist;
     int songCount;
@@ -74,5 +76,13 @@ public class Album {
 
     public long getId() {
         return id;
+    }
+
+    public List<Song> getSongs() {
+        return songs;
+    }
+
+    public String toString(){
+        return String.format("%s by %s with %d songs.", this.title, this.artist, this.songCount);
     }
 }

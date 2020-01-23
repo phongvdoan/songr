@@ -68,7 +68,7 @@ public class AlbumTest {
     }
     @Test
     public void testAlblumClass_getterLength(){
-        int result = testAlbum.getLengthInSeconds();
+        long result = testAlbum.getLengthInSeconds();
         assertEquals(50, result, "The getter did not work for length");
     }
 

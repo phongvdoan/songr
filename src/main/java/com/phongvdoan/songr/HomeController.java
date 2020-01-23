@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @Controller
@@ -14,6 +15,9 @@ public class HomeController {
 
     @Autowired
     AlbumRepository albumRepository;
+
+    @Autowired
+    SongRepository songRepository;
 
     @GetMapping("/")
     public String index(){
@@ -55,7 +59,7 @@ public class HomeController {
     }
 //https://www.callicoder.com/spring-boot-rest-api-tutorial-with-mysql-jpa-hibernate/
     @PutMapping("/albums")
-    public RedirectView updateAlbums(long id, String title, String artist, Integer songCount, Integer lengthInSeconds, String imageUrl){
+    public RedirectView updateAlbums(Long id, String title, String artist, Integer songCount, Integer lengthInSeconds, String imageUrl){
         Album album= albumRepository.getOne(id);
         album.setArtist(artist);
         album.setImageUrl(imageUrl);
@@ -63,6 +67,22 @@ public class HomeController {
         album.setSongCount(songCount);
         album.setTitle(title);
         albumRepository.save(album);
+        return new RedirectView("/albums");
+    }
+
+    @GetMapping("/album")
+    public String getOneAlbum(long id, Model m) {
+        Album album = albumRepository.getOne(id);
+        m.addAttribute("album", album);
+        return "album";
+    }
+
+    @PostMapping("/song")
+    public RedirectView addSongToAlbum(long id, String title, long length, int trackNumber) {
+        Album oneAlbum = albumRepository.getOne(id);
+        Song newSong = new Song(title, length, trackNumber);
+        newSong.album = oneAlbum;
+        songRepository.save(newSong);
         return new RedirectView("/albums");
     }
 
