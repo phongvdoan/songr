@@ -46,6 +46,10 @@ Add dependencies, and added a AlbumRepository Interface.
 
 ## To Run
 
+psql
+
+Create Database albums
+
 Run ./gradlew run
 
 In browser, type localhost.com/8080
@@ -72,6 +76,10 @@ A user should be able to see the songs that belong to an album when looking at t
 Added Song, SongRepository Class with a ManytoOne relationship to Album that has a oneToMany.
 
 ## To Run
+
+psql
+
+Create Database albums
 
 Run ./gradlew run
 
