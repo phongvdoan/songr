@@ -86,4 +86,9 @@ public class HomeController {
         return new RedirectView("/albums");
     }
 
+    @GetMapping("/error")
+    public String getError(){
+        return "error";
+    }
+
 }
